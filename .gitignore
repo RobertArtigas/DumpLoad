@@ -7,15 +7,15 @@
 ############
 ## Clarion
 ############
-*.app
+### *.app
 *.ap~
 *.bpp
 *.bct
 *.cache
 **/Cla*.dll
-*.dct
+### *.dct
 *.exe
-*.FileList.xml
+### *.FileList.xml
 *.ini
 *.MAP
 obj/**
@@ -32,10 +32,11 @@ PWEE*.txt
 *.BAT
 *.SQL
 *.txt
-*.TPS
+### *.TPS
 *.SCN
+
 ############
-Backup
+### Backup
 Classes
 Database
 IconSets
