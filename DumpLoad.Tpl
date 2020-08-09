@@ -98,6 +98,7 @@
 #INSERT(%ExplainUtilDUMPLOAD)
 #INSERT(%ShowExplainUtilDUMPLOAD)
 #TAB ('DUMPLOAD'),PROP(PROP:FontStyle,700)
+#BOXED('')
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
@@ -119,11 +120,15 @@
   #DISPLAY('6) Mutiple-Files format is: RealFile.Tps\!FileName.')
   #DISPLAY('7) Tested on the following drivers:')
   #DISPLAY('TPS, BTRIEVE.')
-  #DISPLAY('Any other drivers you will have to contact me before')
-  #DISPLAY('purchasing this template.')
+  #!DISPLAY('Any other drivers you will have to contact me before')
+  #!DISPLAY('purchasing this template.')
+  #DISPLAY('Any other drivers you will have to work on it yourself')
+  #DISPLAY('and figure out how to do the template code.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Connection')
+#BOXED('')
   #DISPLAY('COMPLETE EXPORT/IMPORT:')
   #DISPLAY('The main module will contain two main procedures:')
   #DISPLAY('1) raDumpAll - Procedure for export of all tables.')
@@ -147,8 +152,10 @@
   #DISPLAY('Will return a value =0 if processing finished OKAY.')
   #DISPLAY('Any value returned >0 means there where errors.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Options')
+#BOXED('')
   #PROMPT('Select CSV Location?',CHECK),%optLocate,DEFAULT(1),AT(10)
   #DISPLAY('ON: Select CSV Files Location. OFF: No Selection.')
   #DISPLAY('')
@@ -167,8 +174,10 @@
   #PROMPT('File Headers?',CHECK),%optHeader,DEFAULT(0),AT(10)
   #DISPLAY('ON: Output First Line Header. OFF: No Header.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Parameters')
+#BOXED('')
   #PROMPT('CSV Location:',@S250),%optWhere,REQ,DEFAULT('.\')
   #DISPLAY('Default location for CSV files. Must have trailing ''\''.')
   #DISPLAY('')
@@ -186,6 +195,7 @@
   #DISPLAY('(CR,LF) Marker is used for MEMO translations.')
   #DISPLAY('')
   #!PROMPT('(Max * 2) Binary:',@S10),%optBin,REQ,DEFAULT('1024')
+#ENDBOXED
 #ENDTAB
 #TAB ('Interfaces')
   #BOXED('Interface for File Manager')
@@ -212,41 +222,46 @@
   #ENDBOXED
 #ENDTAB
 #TAB ('Export')
+#BOXED('')
   #PROMPT('Remove and Create?',CHECK),%expClear,DEFAULT(1),AT(10)
   #DISPLAY('ON: Remove destination export file and create new.')
   #DISPLAY('OFF: Append output records to destination export file.')
   #DISPLAY('')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
   #DISPLAY('If you set the above option to OFF, you have better')
   #DISPLAY('be sure of what you are doing. Appending duplicate')
   #DISPLAY('records to an export file can make it unusable.')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
+#ENDBOXED
 #ENDTAB
 #TAB ('Import')
+#BOXED('')
   #PROMPT('Remove and Create?',CHECK),%impClear,DEFAULT(1),AT(10)
   #DISPLAY('ON: Remove destination import file and create new.')
   #DISPLAY('OFF: Append input records to destination import file.')
   #DISPLAY('')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
   #DISPLAY('If you set the above option to OFF, you have better')
   #DISPLAY('be sure of what you are doing. Appending duplicate')
   #DISPLAY('records to an import file can make it unusable.')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #DISPLAY('')
   #PROMPT('Check Import Structure?',CHECK),%impCheck,DEFAULT(0),AT(10)
   #DISPLAY('ON: Check import structure against known facts.')
   #DISPLAY('OFF: No structure checking of import file.')
   #DISPLAY('')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
   #DISPLAY('If you set the above option to ON, you have better')
   #DISPLAY('be sure of what you are doing. If one of structures')
   #DISPLAY('is BAD, the whole restore might be unusable, since')
   #DISPLAY('the destination data file will NOT be cleared of any')
   #DISPLAY('data and this will cause a MISMATCHED data set.')
-  #DISPLAY('*** EXTREME WARNING ***')
+  #DISPLAY('*** EXTREME WARNING ***'),PROP(PROP:FontStyle,700)
+#ENDBOXED
 #ENDTAB
 #TAB ('Duplicates')
+#BOXED('')
   #PROMPT('Duplicate Key Trace?',CHECK),%impDupKey,DEFAULT(1),AT(10)
   #DISPLAY('ON: Additional trace while importing files.')
   #DISPLAY('OFF: No additional trace while importing files.')
@@ -260,8 +275,10 @@
   #DISPLAY('This option is the most usefull when developing your')
   #DISPLAY('original files and you are deciding on the keys.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Properties')
+#BOXED('')
   #DISPLAY('All property options start with "RAEI".')
   #DISPLAY('This stands for: Roberto Artigas Export Import.')
   #DISPLAY('This prefix is unique enough that it should not')
@@ -272,11 +289,14 @@
   #DISPLAY('')
   #DISPLAY('In the Column|Properties|Option Tab you can enter')
   #DISPLAY('the keyword "RAEIDATA()". See Tab: Column.')
+#ENDBOXED
 #ENDTAB
 #TAB ('Table')
+#BOXED('')
   #DISPLAY('Table (File) property option explanations:')
   #DISPLAY('')
   #DISPLAY('1) RAEIFILE(NO) - Does NOT output this table.')
+  #DISPLAY('')
   #DISPLAY('The most common use for this property is to overide')
   #DISPLAY('files from dumping/loading their contents.')
   #DISPLAY('')
@@ -285,8 +305,10 @@
   #DISPLAY('Table Types: ALIAS, VIEW')
   #DISPLAY('Driver Types: DOS, ASCII, BASIC.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Column')
+#BOXED('')
   #DISPLAY('Column (Field) property option explanations:')
   #DISPLAY('')
   #DISPLAY('1) RAEIDATA(NO,) - Does NOT output this column.')
@@ -301,8 +323,10 @@
   #DISPLAY('the %FieldRecordPicture or the %FieldDisplayPicture')
   #DISPLAY('contains a @D (for DATE) or a @T (for TIME).')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Arrays')
+#BOXED('')
   #DISPLAY('Arrays within tables is denormalized data, and while in')
   #DISPLAY('some cases you can not avoid this due to performance')
   #DISPLAY('reasons, use of arrays in tables should be mininimized.')
@@ -322,8 +346,10 @@
   #DISPLAY('generated to make absolutely sure that, what you are')
   #DISPLAY('expecting to happen, is actually happening.')
   #DISPLAY('')
+#ENDBOXED
 #ENDTAB
 #TAB ('Acknowledgements')
+#BOXED('')
   #DISPLAY('I would like to acknowledge the following individuals:')
   #DISPLAY('')
   #DISPLAY('Michael M. Gorman at Whitemarsh Information Systems')
@@ -340,6 +366,7 @@
   #DISPLAY('')
   #DISPLAY('Thank you.')
   #DISPLAY('Roberto Artigas Jr.')
+#ENDBOXED
 #ENDTAB
 #ENDSHEET
 #!---------------------------------------------------------------------
@@ -3055,17 +3082,23 @@ END
 #!---------------------------------------------------------------------
 #EXTENSION(zDumpLoadGroup,'2002.01.30: Group Dump and Load Tables'),REQ(ZDumpLoad),APPLICATION
 #!---------------------------------------------------------------------
+#INSERT(%PreambleDUMPLOAD)
+#SHEET,HSCROLL
+#INSERT(%MITLicenseDUMPLOAD)
+#!---------------------------------------------------------------------
 #PREPARE
 #DECLARE(%TheCLW)
 #SET(%TheCLW,SUB(%Application,1,5) & '_gl.clw')
 #ENDPREPARE
 #!---------------------------------------------------------------------
-#SHEET,HSCROLL
 #TAB ('Group Dump and Load Procedures')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
-  #DISPLAY('All Rights Reserved World Wide')
+#BOXED('')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('All Rights Reserved World Wide')
+  #!DISPLAY('')
+  #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
   #DISPLAY('')
-  #DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
   #DISPLAY('')
   #DISPLAY('This template looks at your dictionary and automagically')
   #DISPLAY('creates all the routines and modules to export/import')
@@ -3086,7 +3119,7 @@ END
   #DISPLAY('For Dump groups: raDumpGroup_001')
   #DISPLAY('For Load groups: raLoadGroup_001')
   #DISPLAY('')
-#ENDTAB
+#ENDBOXED
   #BOXED(''),HIDE
     #BUTTON('Dump/Load Group Options'),MULTI(%Groupings,%GroupFile & ' ' & %GroupList),INLINE,AT(,,,240)
       #PROMPT('File Name: ',@S30), %GroupFile, REQ
@@ -3101,6 +3134,7 @@ END
       #PROMPT('List Item: ',@S30), %RaEIItem, REQ
     #ENDBUTTON
   #ENDBOXED
+#ENDTAB
 #ENDSHEET
 #!---------------------------------------------------------------------
 #!---------------------------------------------------------------------
@@ -3366,10 +3400,15 @@ END
 #!---------------------------------------------------------------------
 #EXTENSION(zTpl_DumpLoad,'2001.01.23: Dumpload Template Generator'),REQ(zDumpLoad),MULTI
 #!---------------------------------------------------------------------
+#INSERT(%PreambleDUMPLOAD)
 #SHEET,HSCROLL
+#INSERT(%MITLicenseDUMPLOAD)
 #TAB ('Dumpload Template Generator')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
-  #DISPLAY('All Rights Reserved World Wide')
+#BOXED('')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('All Rights Reserved World Wide')
+  #DISPLAY('')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
   #DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDesc,REQ,DEFAULT(UPPER(%Application) & ': Application Comment')
   #DISPLAY('')
@@ -3382,6 +3421,7 @@ END
   #PROMPT('For ALL files Dump''ed and Load''ed? ',CHECK),%GenBtnAll,DEFAULT(1),AT(10)
   #PROMPT('For each file Dump''ed and Load''ed? ',CHECK),%GenBtnEach,DEFAULT(1),AT(10)
   #ENDBOXED
+#ENDBOXED
 #ENDTAB
 #ENDSHEET
 #BOXED(''),HIDE
@@ -4104,7 +4144,9 @@ END
 #!---------------------------------------------------------------------
 #CONTROL(zButtonDumpLoad,'2001.01.26: Generic DumpLoad Button Template'),WINDOW,MULTI
 #!--------------------------------------------------------------------
+#INSERT(%PreambleDUMPLOAD)
 #SHEET,HSCROLL
+#INSERT(%MITLicenseDUMPLOAD)
 #TAB ('Generic DumpLoad Button Template')
   #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
   #DISPLAY('All Rights Reserved World Wide')
@@ -4145,10 +4187,14 @@ END
 #!---------------------------------------------------------------------
 #EXTENSION(zTpl_DumpLoadGroup,'2001.01.28: Dumpload Group Template Generator'),REQ(zDumpLoadGroup),MULTI
 #!---------------------------------------------------------------------
+#INSERT(%PreambleDUMPLOAD)
 #SHEET,HSCROLL
+#INSERT(%MITLicenseDUMPLOAD)
 #TAB ('Dumpload Group Template Generator')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
-  #DISPLAY('All Rights Reserved World Wide')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('All Rights Reserved World Wide')
+  #DISPLAY('')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
   #DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDescG,REQ,DEFAULT(UPPER(%Application) & ': Application Group Comment')
   #DISPLAY('')
@@ -4556,8 +4602,14 @@ END
   #SET(%ExplainTextDUMPLOAD, '')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This is one of the METABASE templates.')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
-  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This generic utility will check file, field, and key names in the dictionary')
-  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' for SQL DUMPLOAD words that may give you problems in the various back ends.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This utility will take all you ISAM tables and Export them as CSV comma delimited files.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' The utility will also IMPORT them and restore your table with previous data. This will give you')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' and additional way of saving data for backup and restore purposes in a TEXT like format.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'Where this utility can become even more handy, is when you are doing conversions from ISAM to SQL.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' The part where you have to create a procedure to output all your table''s data as a CSV file is done.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' backend and you will have to build that QUERY.')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This template has been tested with the ABC template chains.')
