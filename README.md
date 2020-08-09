@@ -9,14 +9,14 @@ This EXTENSION template will take all your ISAM tables and EXPORT them as CSV co
  The EXTENSION template generates all the procedure code automagically.
  You will have to call the procedures to be able to use them.
 
-### Conversion from ISAM to SQL task
+### Conversion of DATA from ISAM to SQL task
 Where this utility can become even more handy, is when you are doing conversions from ISAM to SQL.
  The DCT2SQL templates do not handle conversion of the data in your ISAM files.
  The additional task where you have to create procedures to output all your table's data as a CSV file is done by this code generator.
-
-You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL
+ You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL
  backend and you will have to build that QUERY yourself.
 
 ## Template Generation 
 There are additonal CODE and CONTROL templates that are generated if needed.
- (BEING TESTED AGAIN AFTER 18+ YEARS)
+
+(BEING TESTED AGAIN AFTER 18+ YEARS)
