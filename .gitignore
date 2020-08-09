@@ -27,6 +27,7 @@ PWEE*.txt
 *.images
 *.txa
 *.zip
+*.$$$
 
 ############
 *.BAT
