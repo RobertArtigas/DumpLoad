@@ -10,7 +10,7 @@ This EXTENSION template will take all your ISAM tables and EXPORT them as CSV co
  You will have to call the procedures to be able to use them.
 
 ### Conversion of DATA from ISAM to SQL task
-Where this utility can become even more handy, is when you are doing DATA conversions from ISAM to SQL.
+Where this utility can become even more handy, is when you are doing the DATA conversions from ISAM to SQL.
  The **DCT2SQL** SQL DDL code generator templates do not handle conversion of the data in your ISAM files.
  The additional task where you have to create procedures to output all your table's data as a CSV file is done by this **DUMPLOAD** code generator.
  You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL
