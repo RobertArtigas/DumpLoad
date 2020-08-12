@@ -68,7 +68,7 @@
 #!---------------------------------------------------------------------
 #!---------------------------------------------------------------------
 #!---------------------------------------------------------------------
-#EXTENSION(zDumpLoad,'2002.06.22: Dump and Load Tables'),APPLICATION
+#EXTENSION(zDumpLoad,'2002.06.22: DumpLoad Procedure Generator'),APPLICATION
 #!---------------------------------------------------------------------
 #PREPARE
 #ENDPREPARE
@@ -3403,6 +3403,8 @@ END
 #INSERT(%PreambleDUMPLOAD)
 #SHEET,HSCROLL
 #INSERT(%MITLicenseDUMPLOAD)
+#INSERT(%ExplainUtilDUMPLOADTPL)
+#INSERT(%ShowExplainUtilDUMPLOADTPL)
 #TAB ('Dumpload Template Generator')
 #BOXED('')
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
@@ -4602,7 +4604,7 @@ END
   #SET(%ExplainTextDUMPLOAD, '')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This is one of the METABASE templates.')
   #!SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
-  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This utility will take all you ISAM tables and Export them as CSV comma delimited files.')
+  #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & 'This utility will take all you ISAM tables and EXPORT them as CSV comma delimited files.')
   #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' The utility will also IMPORT them and restore your table with previous data. This will give you')
   #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & ' and additional way of saving data for backup and restore purposes in a TEXT like format.')
   #SET(%ExplainTextDUMPLOAD, %ExplainTextDUMPLOAD & '<13,10><13,10>')
@@ -4626,6 +4628,40 @@ END
     #DISPLAY(''),AT(,,,1)
     #DISPLAY(%ExplainTextDUMPLOAD),AT(,,260,204)
     #!DISPLAY(%ExplainTextDUMPLOAD),AT(,,436,204)
+  #ENDBOXED
+#ENDTAB
+#!---------------------------------------------------------------------
+#!---------------------------------------------------------------------
+#GROUP(%ExplainUtilDUMPLOADTPL)
+#PREPARE
+  #IF(NOT VAREXISTS(%ExplainTextDUMPLOADTPL))
+    #DECLARE(%ExplainTextDUMPLOADTPL)
+  #ENDIF
+  #SET(%ExplainTextDUMPLOADTPL, '')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & 'This template EXTENSION will take all you ISAM tables and create simple CODE and CONTROL templates for')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & ' all the tables that DUMP and LOAD routines are being created.')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & ' Once the templates are created you can add them to the template registry and remove them from generation.')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & '<13,10><13,10>')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & 'IF you add or delete tables from your dictionary, THEN you will have to regenerate your')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & ' templates and get them registered once again.')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & ' As part of your automation process you can leave the EXTENSION template generate all you CODE and CONTROL')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & ' templates in temporary directory and them move them to your template registry directory location.')
+  #!SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & '<13,10><13,10>')
+  #!SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & '<13,10><13,10>')
+  #!SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & 'This template has been tested with the ABC template chains.')
+  #SET(%ExplainTextDUMPLOADTPL, %ExplainTextDUMPLOADTPL & '')
+#ENDPREPARE
+#!
+#GROUP(%ShowExplainUtilDUMPLOADTPL)
+#INSERT(%ExplainUtilDUMPLOADTPL)
+#!TAB(UPPER(%Application) & '.' & UPPER(%ProgramExtension)),PROP(PROP:FontStyle,700),PROP(PROP:FontColor,0C79A3H)
+#TAB('Documentation'),PROP(PROP:FontColor,0C79A3H) #! ,PROP(PROP:FontStyle,700),PROP(PROP:FontColor,0C79A3H)
+  #BOXED('Documentation'),AT(,,,),PROP(PROP:FontStyle,700)
+  #!BOXED('Documentation'),AT(,,278),PROP(PROP:FontStyle,700)
+  #!BOXED('Documentation'),AT(,,454),PROP(PROP:FontStyle,700)
+    #DISPLAY(''),AT(,,,1)
+    #DISPLAY(%ExplainTextDUMPLOADTPL),AT(,,260,204)
+    #!DISPLAY(%ExplainTextDUMPLOADTPL),AT(,,436,204)
   #ENDBOXED
 #ENDTAB
 #!---------------------------------------------------------------------
