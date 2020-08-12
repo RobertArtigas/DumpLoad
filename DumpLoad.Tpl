@@ -111,7 +111,7 @@
   #DISPLAY('Output will have double quotes around each column.')
   #DISPLAY('Routines will handle embeded CR,LF pairs in MEMOs.')
   #DISPLAY('')
-  #DISPLAY('CONSTRAINTS:')
+  #DISPLAY('CONSTRAINTS:'),PROP(PROP:FontStyle,700)
   #DISPLAY('1) CREATE must be ON for ALL export/import files.')
   #DISPLAY('2) Files drivers excluded: ASCII, BASIC, DOS.')
   #DISPLAY('3) BLOB''s are NOT supported in any way.')
@@ -129,14 +129,14 @@
 #ENDTAB
 #TAB ('Connection')
 #BOXED('')
-  #DISPLAY('COMPLETE EXPORT/IMPORT:')
+  #DISPLAY('COMPLETE EXPORT/IMPORT:'),PROP(PROP:FontStyle,700)
   #DISPLAY('The main module will contain two main procedures:')
   #DISPLAY('1) raDumpAll - Procedure for export of all tables.')
   #DISPLAY('2) raLoadAll - Procedure for import of all tables.')
   #DISPLAY('These are the routines you call from a menu item')
   #DISPLAY('(or some other place) to export/import all tables.')
   #DISPLAY('')
-  #DISPLAY('INDIVIDUAL EXPORT/IMPORT:')
+  #DISPLAY('INDIVIDUAL EXPORT/IMPORT:'),PROP(PROP:FontStyle,700)
   #DISPLAY('Each table module will contain the export and import')
   #DISPLAY('procedure for that particular table. This allows you')
   #DISPLAY('the capability to export/import individual files.')
@@ -148,7 +148,7 @@
   #DISPLAY('Where ''[%File]'' is the name of the file that you are')
   #DISPLAY('attempting for Export/Import.')
   #DISPLAY('')
-  #DISPLAY('ALL PROCEDURES:')
+  #DISPLAY('ALL PROCEDURES:'),PROP(PROP:FontStyle,700)
   #DISPLAY('Will return a value =0 if processing finished OKAY.')
   #DISPLAY('Any value returned >0 means there where errors.')
   #DISPLAY('')
@@ -214,7 +214,7 @@
       #PROMPT('Path Field/Var:',@S250),%IntFMspv,REQ,DEFAULT('g:paths')
     #ENDENABLE
     #DISPLAY('')
-    #DISPLAY('PATH MANAGER IS AVAILABLE FROM:')
+    #DISPLAY('PATH MANAGER IS AVAILABLE FROM:'),PROP(PROP:FontStyle,700)
     #DISPLAY('POSitive Software Company')
     #DISPLAY('www.pointofsale.com/developer')
     #DISPLAY('e-mail: timesavers@pointofsale.com')
@@ -301,7 +301,7 @@
   #DISPLAY('files from dumping/loading their contents.')
   #DISPLAY('')
   #DISPLAY('')
-  #DISPLAY('AUTOMATICALLY EXCLUDED ARE:')
+  #DISPLAY('AUTOMATICALLY EXCLUDED ARE:'),PROP(PROP:FontStyle,700)
   #DISPLAY('Table Types: ALIAS, VIEW')
   #DISPLAY('Driver Types: DOS, ASCII, BASIC.')
   #DISPLAY('')
@@ -318,7 +318,7 @@
   #DISPLAY('the type LONG with DATE and TIME.')
   #DISPLAY('')
   #DISPLAY('')
-  #DISPLAY('AUTOMATIC FIELD TYPE GENERATION:')
+  #DISPLAY('AUTOMATIC FIELD TYPE GENERATION:'),PROP(PROP:FontStyle,700)
   #DISPLAY('DATE and TIME are automatically detected and set if')
   #DISPLAY('the %FieldRecordPicture or the %FieldDisplayPicture')
   #DISPLAY('contains a @D (for DATE) or a @T (for TIME).')
@@ -3097,8 +3097,8 @@ END
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
   #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
-  #DISPLAY('')
-  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
+  #!DISPLAY('')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #DISPLAY('This template looks at your dictionary and automagically')
   #DISPLAY('creates all the routines and modules to export/import')
@@ -3409,8 +3409,8 @@ END
 #BOXED('')
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
   #!DISPLAY('All Rights Reserved World Wide')
-  #DISPLAY('')
-  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
+  #!DISPLAY('')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDesc,REQ,DEFAULT(UPPER(%Application) & ': Application Comment')
   #DISPLAY('')
@@ -3556,8 +3556,13 @@ END
 %#!--------------------------------------------------------------------
 %#EXTENSION(DL_%ProjectName,'%TPLDesc'),APPLICATION
 %#!--------------------------------------------------------------------
+%#BOXED('')
+  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  %#DISPLAY('All Rights Reserved World Wide')
+%#ENDBOXED
 %#AT(%%CustomGlobalDeclarations)
-  %#PROJECT('%ClipName.LIB')
+  %#PROJECT('%ProjectName.LIB')
+#!%#PROJECT('%ClipName.LIB')
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#!--------------------------------------------------------------------
@@ -4195,8 +4200,8 @@ END
 #TAB ('Dumpload Group Template Generator')
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
   #!DISPLAY('All Rights Reserved World Wide')
-  #DISPLAY('')
-  #DISPLAY('WARNING: THIS HAS NOT BEEN TESTED IN 18+ YEARS (WORKING ON IT)')
+  #!DISPLAY('')
+  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDescG,REQ,DEFAULT(UPPER(%Application) & ': Application Group Comment')
   #DISPLAY('')
@@ -4333,8 +4338,13 @@ END
 %#!--------------------------------------------------------------------
 %#EXTENSION(DL_%ProjectName_GROUP,'%TPLDescG'),APPLICATION
 %#!--------------------------------------------------------------------
+%#BOXED('')
+  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  %#DISPLAY('All Rights Reserved World Wide')
+%#ENDBOXED
 %#AT(%%CustomGlobalDeclarations)
-  %#PROJECT('%ClipName.LIB')
+  %#PROJECT('%ProjectName.LIB')
+#!%#PROJECT('%ClipName.LIB')
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#!--------------------------------------------------------------------
