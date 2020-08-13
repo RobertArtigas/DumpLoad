@@ -29,9 +29,10 @@ There is an additonal EXTENSION template that will generate CODE and CONTROL tem
 
 
 There is a TEMPLATE that generate additional TEMPLATE's for each table. You should only have to generate this resulting template once.
+ Then there is no need to generate the template again unless you change a specific table.
 
-Once you register the generated resulting template, you should have two CODE (Dump,Load) templates and two CONTROL (Dump,Load) templates for each table.  
+Once you register the generated resulting template, you should have two CODE (Dump,Load) templates and two CONTROL (Dump,Load) templates for each table.
  Please, use a bit of caution and judgement with the automatic template generation. 
  
-IF you have one hundred tables, THEN you will generate four hundred templates.
+IF you have one hundred tables, THEN you will generate four hundred and four templates.
  
