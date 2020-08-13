@@ -10,7 +10,7 @@ The EXTENSION **DUMPLOAD** template will take all your ISAM tables and EXPORT th
 The EXTENSION template generates all the procedure code automagically for each table into sequencialy numbered CLW modules.
  It will then add one more module that puts everything together.
 
-IF you have one hundred tables, THEN your will generated one hundred and one CLW modules.
+IF you have one hundred tables, THEN your will generate one hundred and one CLW modules.
  
 You will have to call he procedures to be able to use them.  The standard that I tend to use, is to call the _Dump_ and _Load_ from the main menu at a point where the files have not be oppened.
 
