@@ -18,7 +18,7 @@ The **DUMPLOAD** template will also have registered additional TEMPLATES that wi
 
 ### Conversion of DATA from ISAM to SQL task
 Where this utility can become even more handy, is when you are doing the DATA conversions from ISAM to the SQL backend.
- The **DCT2SQL** SQL DDL code generator templates do not handle conversion of the data in your ISAM files.
+ The [**DCT2SQL**](https://github.com/RobertArtigas/DCT2SQL) SQL DDL code generator templates do not handle conversion of the data in your ISAM files.
  The additional task where you have to create procedures to output all your table's data as a CSV file is done by this **DUMPLOAD** code generator.
  You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL
  backend and you will have to build that QUERY yourself.
