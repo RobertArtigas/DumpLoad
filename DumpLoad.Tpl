@@ -4,9 +4,9 @@
 #!---------------------------------------------------------------------
 #! File:        DumpLoad.Tpl
 #! Purpose:     Dump and Load Files Generically
-#! Owner:       1997.07.27 - Roberto Artigas Jr
-#! Author:      1999.07.27 - Roberto Artigas Jr
-#!              Copyright © 1999-2999 by Roberto Artigas Jr
+#! Owner:       1997.07.27 - Roberto Artigas y Soler
+#! Author:      1999.07.27 - Roberto Artigas y Soler
+#!              Copyright © 1999-2999 by Roberto Artigas y Soler
 #!              All Rights Reserved World Wide
 #! Definition:  Michael Gorman - TopSpeed.Topic.Third_Party
 #! Interfaces:  File Manager interface developed as a contract
@@ -15,53 +15,53 @@
 #!      NOTE: Need to think about better handling of GLO:FileName.
 #!---------------------------------------------------------------------
 #! Changes:
-#! 2020.08.08 - Roberto Artigas
+#! 2020.08.08 - Roberto Artigas y Soler
 #!  *   Changed email address literal. Start rework of the template structure.
-#! 2008.01.23 - Roberto Artigas
+#! 2008.01.23 - Roberto Artigas y Soler
 #!  *   Changed email address literal. Change default date and time mask.
 #!---------------------------------------------------------------------
 #!---------------------------------------------------------------------
-#! 2002.06.22 - Roberto Artigas Jr.
+#! 2002.06.22 - Roberto Artigas y Soler
 #!  *   Replaced the 'raDumpCRLF' and 'raLoadCRLF'. Needed logic upgrade.
 #!      Passes parameters now. First parameter is the dump/load routine name.
 #!      Will allow me to improve debugging areas if I need to later.
-#! 2002.06.19 - Roberto Artigas Jr.
+#! 2002.06.19 - Roberto Artigas y Soler
 #!  *   Improved the debugging dumpload.log generation just a tiny bit.
 #!      Now a bit easier to spot when a %FileName is in the incorrect format.
 #!      This normally happens when new files are added to the dictionary and
 #!      the RAEIFILE(NO) does not get added to a file that has to be excluded.
-#! 2001.09.07 - Roberto Artigas Jr. 
+#! 2001.09.07 - Roberto Artigas y Soler 
 #!  *   Changed module name generation to avoid duplicates at 8.3 time.
 #!      It seems that the gererator/compiler gets confused and forgets.
-#! 2001.08.30 - Roberto Artigas Jr.
+#! 2001.08.30 - Roberto Artigas y Soler
 #!  *   Changed the hidden variables box to before the sheet.
 #!  *   Change the 'DumpLoad.Log' to include a sequence number for the files.
-#! 2001.01.28 - Roberto Artigas Jr.
+#! 2001.01.28 - Roberto Artigas y Soler
 #!  *   Added #CONTROL (button) template generation for each file and ALL files.
 #!  *   Added #CONTROL (button) template generation for generic routines.
 #!  *   Reworked group template to have all the groups globaly available.
 #!  *   Added #CODE (embed) template generation to groups.
 #!  *   Added #CONTROL (button) template generation to groups.
 #!  *   Comented out general procedure options (more testing required).
-#! 2001.01.26 - Roberto Artigas Jr.
+#! 2001.01.26 - Roberto Artigas y Soler
 #!  *   Added #CONTROL (button) generic template as programmer example.
-#! 2001.01.23 - Roberto Artigas Jr.
+#! 2001.01.23 - Roberto Artigas y Soler
 #!  *   Added #CODE (embed) template generation for each file and ALL files.
-#! 2001.01.18 - Roberto Artigas Jr.
+#! 2001.01.18 - Roberto Artigas y Soler
 #!  *   Code consolidation and template cleanup.
 #!  *   Additional 'FileDriver' types excluded from processing.
-#! 2001.01.14 - Roberto Artigas Jr.
+#! 2001.01.14 - Roberto Artigas y Soler
 #!  *   Increased number of groups per file from 5 to 10.
-#! 2001.01.13 - Roberto Artigas Jr
+#! 2001.01.13 - Roberto Artigas y Soler
 #!  *   Added group options template.
 #!  *   Corrected EXTRACT of options when more than one option.
-#! 2000.03.03 - Roberto Artigas Jr
+#! 2000.03.03 - Roberto Artigas y Soler
 #!  *   Detect posible bad file structure on import.
-#! 2000.02.21 - Roberto Artigas Jr
+#! 2000.02.21 - Roberto Artigas y Soler
 #!  *   Add array variable support. 1 -> 4 dimensions.
 #!  *   Cleaned up the TPS multi-file support.
 #!---------------------------------------------------------------------
-#! Copyright © 1999-2999 by Roberto Artigas Jr.
+#! Copyright © 1999-2999 by Roberto Artigas y Soler
 #! All Rights Reserved World Wide
 #!---------------------------------------------------------------------
 #TEMPLATE(zDumpLoad, '2002.06.22: Dump and Load Tables'),FAMILY('CW20','ABC')
@@ -99,7 +99,7 @@
 #INSERT(%ShowExplainUtilDUMPLOAD)
 #TAB ('DUMPLOAD'),PROP(PROP:FontStyle,700)
 #BOXED('')
-  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
   #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
@@ -365,7 +365,7 @@
   #DISPLAY('testing scenarios. Too many of you to mention all.')
   #DISPLAY('')
   #DISPLAY('Thank you.')
-  #DISPLAY('Roberto Artigas Jr.')
+  #DISPLAY('Roberto Artigas y Soler.')
 #ENDBOXED
 #ENDTAB
 #ENDSHEET
@@ -376,15 +376,15 @@
 #PROJECT(%DriverLib)                                        #! Add driver to project
 #FIX(%Driver,'ASCII')                                       #! Going to need this
 #PROJECT(%DriverLib)                                        #! Add driver to project
-#!--------------------------------------------------------------------!
-#! 2001.01.18.THU - Roberto Artigas Jr - Part of code consolidation.  !
-#!--------------------------------------------------------------------!
-#! Logic that sees if the file is valid for processing was used in    !
-#! almost every #FOR(%File) loop. I decided to speed up processing by !
-#! preprocessing and creating a list of valid files at the beginning  !
-#! of the template. This also minimizes template maintenance if the   !
-#! criteria for a valid file changes. All in one place. Right here.   !
-#!--------------------------------------------------------------------!
+#!-------------------------------------------------------------------------!
+#! 2001.01.18.THU - Roberto Artigas y Soler - Part of code consolidation.  !
+#!-------------------------------------------------------------------------!
+#! Logic that sees if the file is valid for processing was used in         !
+#! almost every #FOR(%File) loop. I decided to speed up processing by      !
+#! preprocessing and creating a list of valid files at the beginning       !
+#! of the template. This also minimizes template maintenance if the        !
+#! criteria for a valid file changes. All in one place. Right here.        !
+#!-------------------------------------------------------------------------!
 #IF(%TheDebug)
   #REMOVE('DumpLoad.Log')
   #CREATE('DumpLoad.Log')
@@ -512,8 +512,8 @@
 !---------------------------------------------------------------------
 ! File:         %RaFileName
 ! Purpose:      Dump and Load Files
-! Creator:      1999.07.27 - Roberto Artigas
-! Copyright:    1999-2999 (c) by Roberto Artigas Jr
+! Creator:      1999.07.27 - Roberto Artigas y Soler
+! Copyright:    1999-2999 (c) by Roberto Artigas y Soler
 !               All Rights Reserved World Wide
 !---------------------------------------------------------------------
   MEMBER('%Application.clw')
@@ -521,7 +521,7 @@
 !
 ! Procedure:    raCountChar
 ! Purpose:      Count specific character in line
-! Author:       2000.03.04 - Roberto Artigas Jr
+! Author:       2000.03.04 - Roberto Artigas y Soler
 raCountChar     PROCEDURE(strChar, strLine)
 lngRc           LONG(0)
 lngPos          LONG(0)
@@ -538,7 +538,7 @@ lngPos          LONG(0)
 !
 ! Procedure:    raFileDrv2Ext
 ! Purpose:      Given Driver return Extension
-! Author:       2000.01.17 - Roberto Artigas Jr
+! Author:       2000.01.17 - Roberto Artigas y Soler
 !
 raFileDrv2Ext   PROCEDURE(xDriver)
   CODE
@@ -554,13 +554,13 @@ raFileDrv2Ext   PROCEDURE(xDriver)
 !
 ! Procedure:    raFileClean
 ! Purpose:      Clean File Name
-! Author:       2000.01.12 - Roberto Artigas Jr
+! Author:       2000.01.12 - Roberto Artigas y Soler
 ! NOTE:         Embeded tables (many files) within a file gives a bad count
 !               for the files in the warning messages. However, the files
 !               export and import correctly. While I could fake it and give
 !               a correct count I rather leave the inconsistency in.
 !               Do not have a solution at this time. Will see what happens.
-!               2000.02.26 - Roberto Artigas Jr
+!               2000.02.26 - Roberto Artigas y Soler
 !               Got some sugestions from Maarten Veenstra (Holand)
 !
 raFileClean     PROCEDURE(xFileName)
@@ -608,7 +608,7 @@ strMsg          STRING(256)
 !
 ! Procedure:    raFileExists
 ! Purpose:      Does File Exist
-! Author:       1999.09.03 - Roberto Artigas Jr
+! Author:       1999.09.03 - Roberto Artigas y Soler
 !
 raFileExists    PROCEDURE (xFileName)
 FileName        CSTRING(256)
@@ -627,7 +627,7 @@ CheckRW         EQUATE(6)   ! Check for read/write permission (not used here)
 !
 ! Procedure:    raAscSetDir
 ! Purpose:      Set the ASC directory
-! Author:       2000.01.16 - Roberto Artigas Jr
+! Author:       2000.01.16 - Roberto Artigas y Soler
 !
 raAscSetDir     PROCEDURE (xTitle)
 FinalPath       STRING(256)
@@ -643,7 +643,7 @@ FinalPath       STRING(256)
 !
 ! Procedure:    raAscSetFile
 ! Purpose:      Set the ASC file final location
-! Author:       2000.01.16 - Roberto Artigas Jr
+! Author:       2000.01.16 - Roberto Artigas y Soler
 !
 raAscSetFile    PROCEDURE (xFileName)
 FinalPath       STRING(256)
@@ -654,7 +654,7 @@ FinalPath       STRING(256)
 !
 ! Procedure:    raAscExists
 ! Purpose:      Does *.TPB File Exist
-! Author:       2000.01.15 - Roberto Artigas Jr
+! Author:       2000.01.15 - Roberto Artigas y Soler
 !
 raAscExists     PROCEDURE (xFileName)
 FileName        CSTRING(256)
@@ -674,7 +674,7 @@ CheckRW         EQUATE(6)   ! Check for read/write permission (not used here)
 #!!
 #!! Procedure:    raDumpCRLF
 #!! Purpose:      Convert CRLF to Defined Constant (MEMO's)
-#!! Author:       1999.08.01 - Roberto Artigas Jr
+#!! Author:       1999.08.01 - Roberto Artigas y Soler
 #!!
 #!raDumpCRLF      PROCEDURE(strData)
 #!FoundCr         LONG(0)
@@ -693,7 +693,7 @@ CheckRW         EQUATE(6)   ! Check for read/write permission (not used here)
 #!!
 #!! Procedure:    raLoadCRLF
 #!! Purpose:      Convert Defined Constant to CRLF (MEMO's)
-#!! Author:       1999.08.01 - Roberto Artigas Jr
+#!! Author:       1999.08.01 - Roberto Artigas y Soler
 #!!
 #!raLoadCRLF      PROCEDURE(strData)
 #!FoundCr         LONG(0)
@@ -714,7 +714,7 @@ CheckRW         EQUATE(6)   ! Check for read/write permission (not used here)
 !
 ! Procedure:    raDumpCRLF
 ! Purpose:      Convert CRLF to Defined Constant (MEMO's)
-! Author:       2002.06.22 - Roberto Artigas Jr
+! Author:       2002.06.22 - Roberto Artigas y Soler
 !
 raDumpCRLF      PROCEDURE(strWhere,optCRLF,strData)
 LenCr           LONG(0)
@@ -735,7 +735,7 @@ FoundCr         LONG(0)
 !
 ! Procedure:    raLoadCRLF
 ! Purpose:      Convert Defined Constant to CRLF (MEMO's)
-! Author:       2002.06.22 - Roberto Artigas Jr
+! Author:       2002.06.22 - Roberto Artigas y Soler
 !
 raLoadCRLF      PROCEDURE(strWhere,optCRLF,strData)
 LenCr           LONG(0)
@@ -756,7 +756,7 @@ FoundCr         LONG(0)
 !
 ! Procedure:    raHEXUnpack
 ! Purpose:  Convert 1 byte binary value to 2 character hex value
-! Author:   1999.08.10 - Roberto Artigas Jr
+! Author:   1999.08.10 - Roberto Artigas y Soler
 !
 raHEXUnpack     PROCEDURE (strDst, byteSrc)
 strHex          STRING(2)   ! Return data
@@ -802,7 +802,7 @@ strHex          STRING(2)   ! Return data
 !
 ! Procedure:    raHEXPack
 ! Purpose:  Convert 2 character hex value to 1 byte binary value
-! Author:   1999.08.10 - Roberto Artigas Jr
+! Author:   1999.08.10 - Roberto Artigas y Soler
 !
 raHEXPack       PROCEDURE (byteDst, strSrc)
 byteVal         BYTE(0)
@@ -819,7 +819,7 @@ bytePos         BYTE(0)
 !
 ! Procedure:    raDumpHEX
 ! Purpose:      Convert Binary Data to Hex - BLOB, STRING
-! Author:       1999.08.09 - Roberto Artigas JR
+! Author:       1999.08.09 - Roberto Artigas y Soler
 !
 raDumpHEX       PROCEDURE(strDst, strSrc, lngSrc)
 byteData        BYTE(0)
@@ -837,7 +837,7 @@ strData         STRING(2)
 !
 ! Procedure:    raLoadHEX
 ! Purpose:      Convert Hex to Binary Data - BLOB, STRING
-! Author:       1999.08.09 - Roberto Artigas JR
+! Author:       1999.08.09 - Roberto Artigas y Soler
 !
 raLoadHEX       PROCEDURE(strDst, strSrc, lngSrc)
 byteData        BYTE(0)
@@ -1010,9 +1010,9 @@ lngRC           LONG(0) #<! Error File Counter
 #!---------------------------------------------------------------------
 #!---------------------------------------------------------------------
 #!--------------------------------------------------------------------!
-#! 2001.09.07.FRI - Roberto Artigas Jr.                               !
+#! 2001.09.07.FRI - Roberto Artigas y Soler                           !
 #! Changed module name generation to avoid duplicates at 8.3 time.    !
-#! 2001.01.18.THU - Roberto Artigas Jr.                               !
+#! 2001.01.18.THU - Roberto Artigas y Soler                           !
 #! This area is the main loop of creating an EI_*.CLW source file for !
 #! each application file that matched all conditions necessary to be  !
 #! included in the dump/load process.                                 !
@@ -2815,7 +2815,7 @@ raCountImport          PROCEDURE(),LONG
 #INDENT(5)
 END
 #!--------------------------------------------------------------------!
-#! 2001.09.07.FRI - Roberto Artigas Jr.                               !
+#! 2001.09.07.FRI - Roberto Artigas y Soler                           !
 #! Changed module name generation to avoid duplicates at 8.3 time.    !
 #!--------------------------------------------------------------------!
 #SET (%PassCount,0)                                         #! RAS.2001.09.07
@@ -2882,7 +2882,7 @@ GLO:EI_AFile           STRING(256) #<! CSV Files Full Path
 #CONTROL(zDumpAll,'2001.01.18: Export All Tables'),REQ(zDumpLoad),WINDOW,MULTI
 #!---------------------------------------------------------------------
 #BOXED('Export ALL Tables')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #DISPLAY('All Rights Reserved World Wide')
   #DISPLAY('')
   #DISPLAY('Creates a button control to export all files.')
@@ -2923,7 +2923,7 @@ END
 #CONTROL(zLoadAll,'2001.01.18: Import All Tables'),REQ(zDumpLoad),WINDOW,MULTI
 #!---------------------------------------------------------------------
 #BOXED('Import All Tables')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #DISPLAY('All Rights Reserved World Wide')
   #DISPLAY('')
   #DISPLAY('Creates a button control to import all files.')
@@ -2970,7 +2970,7 @@ END
 #ENDPREPARE
 #!---------------------------------------------------------------------
 #BOXED('Export Selected Tables')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #DISPLAY('All Rights Reserved World Wide')
   #DISPLAY('')
   #DISPLAY('Creates a button control to export selected files.')
@@ -3030,7 +3030,7 @@ END
 #ENDPREPARE
 #!---------------------------------------------------------------------
 #BOXED('Import Selected Tables')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #DISPLAY('All Rights Reserved World Wide')
   #DISPLAY('')
   #DISPLAY('Creates a button control to import selected files.')
@@ -3093,7 +3093,7 @@ END
 #!---------------------------------------------------------------------
 #TAB ('Group Dump and Load Procedures')
 #BOXED('')
-  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
   #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
@@ -3179,8 +3179,8 @@ END
 !---------------------------------------------------------------------
 ! File:         %RaFileDo01
 ! Purpose:      Dump and Load File Groups
-! Creator:      2001.01.13 - Roberto Artigas
-! Copyright:    1999-2999 (c) by Roberto Artigas Jr
+! Creator:      2001.01.13 - Roberto Artigas y Soler
+! Copyright:    1999-2999 (c) by Roberto Artigas y Soler
 !               All Rights Reserved World Wide
 !---------------------------------------------------------------------
   MEMBER('%Application.clw')
@@ -3407,7 +3407,7 @@ END
 #INSERT(%ShowExplainUtilDUMPLOADTPL)
 #TAB ('Dumpload Template Generator')
 #BOXED('')
-  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
   #!DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
@@ -3557,7 +3557,7 @@ END
 %#EXTENSION(DL_%ProjectName,'%TPLDesc'),APPLICATION
 %#!--------------------------------------------------------------------
 %#BOXED('')
-  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   %#DISPLAY('All Rights Reserved World Wide')
 %#ENDBOXED
 %#AT(%%CustomGlobalDeclarations)
@@ -4155,7 +4155,7 @@ END
 #SHEET,HSCROLL
 #INSERT(%MITLicenseDUMPLOAD)
 #TAB ('Generic DumpLoad Button Template')
-  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #DISPLAY('All Rights Reserved World Wide')
   #DISPLAY('')
   #DISPLAY('This is a generic dumpload button template.')
@@ -4198,7 +4198,7 @@ END
 #SHEET,HSCROLL
 #INSERT(%MITLicenseDUMPLOAD)
 #TAB ('Dumpload Group Template Generator')
-  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
   #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
@@ -4339,7 +4339,7 @@ END
 %#EXTENSION(DL_%ProjectName_GROUP,'%TPLDescG'),APPLICATION
 %#!--------------------------------------------------------------------
 %#BOXED('')
-  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas Jr.')
+  %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   %#DISPLAY('All Rights Reserved World Wide')
 %#ENDBOXED
 %#AT(%%CustomGlobalDeclarations)
