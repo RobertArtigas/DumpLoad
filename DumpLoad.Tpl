@@ -3556,7 +3556,7 @@ END
 %#!--------------------------------------------------------------------
 %#EXTENSION(DL_%ProjectName,'%TPLDesc'),APPLICATION
 %#!--------------------------------------------------------------------
-%#BOXED('')
+%#BOXED('DUMPLOAD'),PROP(PROP:FontStyle,700)
   %#DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   %#DISPLAY('All Rights Reserved World Wide')
 %#ENDBOXED
