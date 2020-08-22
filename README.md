@@ -1,10 +1,15 @@
 ## Development
-IF you want me to continue improving this code generator, THEN send me an e-mail that you are using it.
- It might be useful to include your use case scenario and a description of why you want this improvement and how it helps the business you are involved in working.
+IF you want me to continue improving this code generator, THEN e-mail me that you are using it. 
+ It might be useful to include your use case scenario and a description of why you want this 
+ improvement and how it helps the business you are involved in working.
+
+SI desea que continúe mejorando este generador de código, ENTONCES envíeme un correo electrónico que lo está utilizando. 
+ Puede ser útil incluir el escenario de su caso de uso y una descripción de por qué desea esta mejora
+ y cómo ayuda a la empresa en la que está involucrado.
  
 # DumpLoad: Backup Code Generator (Generador código de reserva)
 
-The EXTENSION **DUMPLOAD** template will take all your ISAM tables and EXPORT them as CSV comma delimited files.
+The **DUMPLOAD** template will take all your ISAM tables and EXPORT them as CSV comma delimited files.
  This template will also IMPORT them and restore your table with previous data. This will give you
  and additional way of saving data for backup and restore purposes in a TEXT like format.
 
