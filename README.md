@@ -23,14 +23,14 @@ You will have to call he procedures to be able to use them.  The standard that I
 The **DUMPLOAD** template will also have registered additional TEMPLATES that will: 1) Dump all tables, 2) Load all tables, 3) Dump selected tables, 4) Load selected tables.
 
 ### Conversion of DATA from ISAM to SQL task
-Where this utility can become even more handy, is when you are doing the DATA conversions from ISAM to the SQL backend.
+Where this utility can become even more handy, is when you are doing the DATA conversions from ISAM to the SQL.
  The [**DCT2SQL**](https://github.com/RobertArtigas/DCT2SQL) SQL DDL code generator templates do not handle conversion of the data in your ISAM files.
  The additional task where you have to create procedures to output all your table's data as a CSV file is done by this **DUMPLOAD** code generator.
- You will still have to create the SQL backend table LOAD query script. That is dependent on your SQL
- backend and you will have to build that QUERY yourself.
+ You will still have to create the SQL server table LOAD query script. That is dependent on your SQL
+ server and you will have to build that QUERY yourself.
 
 ## Template Generation 
-There is an additonal EXTENSION template that will generate CODE and CONTROL templates for all the tables. 
+There is an additonal template that will generate CODE and CONTROL templates for all the tables. 
  Just select the options on this generating template to generete the templates you want.
 
 
@@ -42,6 +42,6 @@ Once you register the generated resulting template, you should have two CODE (Du
  
 IF you have one hundred tables, THEN you will generate four hundred and four templates.
 
-[Main](https://github.com/RobertArtigas)
+[Main](https://github.com/RobertArtigas) [Repositories](https://github.com/RobertArtigas?tab=repositories)
 
  
