@@ -42,6 +42,10 @@ Once you register the generated resulting template, you should have two CODE (Du
  
 IF you have one hundred tables, THEN you will generate four hundred and four templates.
 
-[Main](https://github.com/RobertArtigas) [Repositories](https://github.com/RobertArtigas?tab=repositories)
+
+[Code](https://github.com/RobertArtigas/DumpLoad) 
+[Wiki](https://github.com/RobertArtigas/DumpLoad/wiki) 
+[Main](https://github.com/RobertArtigas) 
+[Repositories](https://github.com/RobertArtigas?tab=repositories)
 
  
