@@ -37,7 +37,7 @@ PWEE*.txt
 *.SCN
 
 ############
-### Backup
+!Backup
 Classes
 Database
 IconSets
@@ -50,8 +50,8 @@ _database_*
 _csv_to_import
 _Clarion_
 Test
-_rat_
 *_original
+_archive_
 
 ############
 ## Windows
