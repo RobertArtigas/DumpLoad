@@ -3,6 +3,7 @@
 ############
 
 *.sublime-workspace
+.*
  
 ############
 ## Clarion
