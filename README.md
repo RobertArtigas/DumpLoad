@@ -35,12 +35,13 @@ There is an additonal template that will generate CODE and CONTROL templates for
 
 
 There is a TEMPLATE that generate additional TEMPLATE's for each table. You should only have to generate this resulting template once.
- Then there is no need to generate the template again unless you change a specific table.
 
 Once you register the generated resulting template, you should have two CODE (Dump,Load) templates and two CONTROL (Dump,Load) templates for each table.
  Please, use a bit of caution and judgement with the automatic template generation. 
  
 IF you have one hundred tables, THEN you will generate four hundred and four templates.
+
+Please be kind to your Template Registry and think about the size of it.
 
 
 [Code](https://github.com/RobertArtigas/DumpLoad) 
