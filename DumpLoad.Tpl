@@ -15,6 +15,8 @@
 #!      NOTE: Need to think about better handling of GLO:FileName.
 #!---------------------------------------------------------------------
 #! Changes:
+#! 2021.01.17 - Roberto Artigas y Soler
+#!  *   Getting template webinar ready for distribution.
 #! 2020.08.08 - Roberto Artigas y Soler
 #!  *   Changed email address literal. Start rework of the template structure.
 #! 2008.01.23 - Roberto Artigas y Soler
