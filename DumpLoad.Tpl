@@ -31,7 +31,7 @@
 #!      This normally happens when new files are added to the dictionary and
 #!      the RAEIFILE(NO) does not get added to a file that has to be excluded.
 #! 2001.09.07 - Roberto Artigas y Soler 
-#!  *   Changed module name generation to avoid duplicates at 8.3 time.
+#!  *   Changed source name generation to avoid duplicates at 8.3 time.
 #!      It seems that the gererator/compiler gets confused and forgets.
 #! 2001.08.30 - Roberto Artigas y Soler
 #!  *   Changed the hidden variables box to before the sheet.
@@ -105,7 +105,7 @@
   #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
   #!DISPLAY('')
   #DISPLAY('This template looks at your dictionary and automagically')
-  #DISPLAY('creates all the routines and modules to export/import')
+  #DISPLAY('creates all the routines and sources to export/import')
   #DISPLAY('each data table to Comma Delimited (CSV-BASIC) File.')
   #DISPLAY('')
   #DISPLAY('Output will have double quotes around each column.')
@@ -130,19 +130,19 @@
 #TAB ('Connection')
 #BOXED('')
   #DISPLAY('COMPLETE EXPORT/IMPORT:'),PROP(PROP:FontStyle,700)
-  #DISPLAY('The main module will contain two main procedures:')
+  #DISPLAY('The main source will contain two main procedures:')
   #DISPLAY('1) raDumpAll - Procedure for export of all tables.')
   #DISPLAY('2) raLoadAll - Procedure for import of all tables.')
   #DISPLAY('These are the routines you call from a menu item')
   #DISPLAY('(or some other place) to export/import all tables.')
   #DISPLAY('')
   #DISPLAY('INDIVIDUAL EXPORT/IMPORT:'),PROP(PROP:FontStyle,700)
-  #DISPLAY('Each table module will contain the export and import')
+  #DISPLAY('Each table source will contain the export and import')
   #DISPLAY('procedure for that particular table. This allows you')
   #DISPLAY('the capability to export/import individual files.')
   #DISPLAY('The names for the table import/export procedures are')
   #DISPLAY('generated partly from the table name. Look inside the')
-  #DISPLAY('created table module for the specific names.')
+  #DISPLAY('created table source for the specific names.')
   #DISPLAY('1) raDOne[%File] - Procedure for single table export.')
   #DISPLAY('2) raLOne[%File] - Procedure for single table import.')
   #DISPLAY('Where ''[%File]'' is the name of the file that you are')
@@ -503,7 +503,7 @@
 #SET (%RaClipName, SUB(%Application, 1, 5))
 #SET (%RaFileDo00, %RaClipName & '_EI.clw')
 #SET (%RaWorkName, %RaClipName & '_EI.$$$')
-#MESSAGE('Building Export/Import Modules', 1)
+#MESSAGE('Building Export/Import Sources', 1)
 #MESSAGE('Creating: ' & %RaFileDo00,2)
 #PROJECT (%RaFileDo00)
 #CREATE(%RaWorkName)
@@ -1011,7 +1011,7 @@ lngRC           LONG(0) #<! Error File Counter
 #!---------------------------------------------------------------------
 #!--------------------------------------------------------------------!
 #! 2001.09.07.FRI - Roberto Artigas y Soler                           !
-#! Changed module name generation to avoid duplicates at 8.3 time.    !
+#! Changed source name generation to avoid duplicates at 8.3 time.    !
 #! 2001.01.18.THU - Roberto Artigas y Soler                           !
 #! This area is the main loop of creating an EI_*.CLW source file for !
 #! each application file that matched all conditions necessary to be  !
@@ -2785,38 +2785,60 @@ raLOne%File PROCEDURE
 #!---------------------------------------------------------------------
 #AT(%GlobalMap)
 !RA-BEG: GlobalMap (zDumpLoad)
-MODULE('Win00')
-#INDENT(-5)
-Access                 PROCEDURE(*CSTRING,SHORT),SHORT,RAW,NAME('_access')
-#INDENT(5)
-END
+  MODULE('Win00')
+#! RA.2021.01.17: Change how this is done.
+#!#INDENT(-5)
+#!Access                 PROCEDURE(*CSTRING,SHORT),SHORT,RAW,NAME('_access')
+#!#INDENT(5)
+Access                 (*CSTRING,SHORT),SHORT,RAW,NAME('_access')
+  END
 
-MODULE('%RaFileDo00')
-#INDENT(-5)
-raCountChar            PROCEDURE(STRING,STRING),LONG
-raFileDrv2Ext          PROCEDURE(STRING),STRING
-raFileClean            PROCEDURE(STRING),STRING
-raFileExists           PROCEDURE(STRING),BYTE
-raAscSetDir            PROCEDURE(STRING),STRING
-raAscSetFile           PROCEDURE(STRING),STRING
-raAscExists            PROCEDURE(STRING),BYTE
-#!raDumpCRLF             PROCEDURE(*STRING)
-#!raLoadCRLF             PROCEDURE(*STRING)
-raDumpCRLF             PROCEDURE(STRING,STRING,*STRING)
-raLoadCRLF             PROCEDURE(STRING,STRING,*STRING)
-raHEXUnpack            PROCEDURE(*STRING,BYTE)
-raHEXPack              PROCEDURE(*BYTE,STRING)
-raDumpHEX              PROCEDURE(*STRING,STRING,LONG)
-raLoadHEX              PROCEDURE(*STRING,STRING,LONG)
-raDumpAll              PROCEDURE(),LONG
-raLoadAll              PROCEDURE(),LONG
-raCountExport          PROCEDURE(),LONG
-raCountImport          PROCEDURE(),LONG
-#INDENT(5)
-END
+  MODULE('%RaFileDo00')
+#! RA.2021.01.17: Change how this is done.
+#!#INDENT(-5)
+#!raCountChar            PROCEDURE(STRING,STRING),LONG
+#!raFileDrv2Ext          PROCEDURE(STRING),STRING
+#!raFileClean            PROCEDURE(STRING),STRING
+#!raFileExists           PROCEDURE(STRING),BYTE
+#!raAscSetDir            PROCEDURE(STRING),STRING
+#!raAscSetFile           PROCEDURE(STRING),STRING
+#!raAscExists            PROCEDURE(STRING),BYTE
+#!#!raDumpCRLF             PROCEDURE(*STRING)
+#!#!raLoadCRLF             PROCEDURE(*STRING)
+#!raDumpCRLF             PROCEDURE(STRING,STRING,*STRING)
+#!raLoadCRLF             PROCEDURE(STRING,STRING,*STRING)
+#!raHEXUnpack            PROCEDURE(*STRING,BYTE)
+#!raHEXPack              PROCEDURE(*BYTE,STRING)
+#!raDumpHEX              PROCEDURE(*STRING,STRING,LONG)
+#!raLoadHEX              PROCEDURE(*STRING,STRING,LONG)
+#!raDumpAll              PROCEDURE(),LONG
+#!raLoadAll              PROCEDURE(),LONG
+#!raCountExport          PROCEDURE(),LONG
+#!raCountImport          PROCEDURE(),LONG
+#!#INDENT(5)
+raCountChar            (STRING,STRING),LONG
+raFileDrv2Ext          (STRING),STRING
+raFileClean            (STRING),STRING
+raFileExists           (STRING),BYTE
+raAscSetDir            (STRING),STRING
+raAscSetFile           (STRING),STRING
+raAscExists            (STRING),BYTE
+#!raDumpCRLF             (*STRING)
+#!raLoadCRLF             (*STRING)
+raDumpCRLF             (STRING,STRING,*STRING)
+raLoadCRLF             (STRING,STRING,*STRING)
+raHEXUnpack            (*STRING,BYTE)
+raHEXPack              (*BYTE,STRING)
+raDumpHEX              (*STRING,STRING,LONG)
+raLoadHEX              (*STRING,STRING,LONG)
+raDumpAll              (),LONG
+raLoadAll              (),LONG
+raCountExport          (),LONG
+raCountImport          (),LONG
+  END
 #!--------------------------------------------------------------------!
 #! 2001.09.07.FRI - Roberto Artigas y Soler                           !
-#! Changed module name generation to avoid duplicates at 8.3 time.    !
+#! Changed source name generation to avoid duplicates at 8.3 time.    !
 #!--------------------------------------------------------------------!
 #SET (%PassCount,0)                                         #! RAS.2001.09.07
 #FOR (%DoTheseFiles)                                        #! RAS.2001.01.18
@@ -2825,14 +2847,18 @@ END
   #SET (%PassCount, %PassCount + 1)                         #! RAS.2001.09.07
   #SET (%RaClipName, FORMAT(%PassCount,@N05))               #! RAS.2001.09.07
   #SET(%RaFileName, %RaClipName & '.clw')                   #! RAS.2001.01.18
-MODULE('EI_%RaFileName')
-#INDENT(-5)
-raDump%[16]File PROCEDURE(),LONG
-raLoad%[16]File PROCEDURE(),LONG
-raDOne%[16]File PROCEDURE(),LONG
-raLOne%[16]File PROCEDURE(),LONG
-#INDENT(5)
-END
+  MODULE('EI_%RaFileName')
+#!#INDENT(-5)
+#!raDump%[16]File PROCEDURE(),LONG
+#!raLoad%[16]File PROCEDURE(),LONG
+#!raDOne%[16]File PROCEDURE(),LONG
+#!raLOne%[16]File PROCEDURE(),LONG
+#!#INDENT(5)
+raDump%[16]File (),LONG
+raLoad%[16]File (),LONG
+raDOne%[16]File (),LONG
+raLOne%[16]File (),LONG
+  END
 #ENDFOR
 !RA-END: GlobalMap (zDumpLoad)
 #ENDAT
@@ -3101,7 +3127,7 @@ END
   #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #DISPLAY('This template looks at your dictionary and automagically')
-  #DISPLAY('creates all the routines and modules to export/import')
+  #DISPLAY('creates all the routines and source to export/import')
   #DISPLAY('groups of data tables to comma delimited (CSV) files.')
   #DISPLAY('')
   #DISPLAY('File group options have a maximum of ten paramaters:')
@@ -3170,7 +3196,7 @@ END
 #SET (%RaClipList, SUB(%Application, 1, 5))
 #SET (%RaFileDo01, %RaClipList & '_gl.clw')
 #SET (%RaWorkList, %RaClipList & '_gl.$$$')
-#MESSAGE('Building Group Export/Import Module', 1)
+#MESSAGE('Building Group Export/Import Source', 1)
 #MESSAGE('Creating: ' & %RaFileDo01, 2)
 #PROJECT(%RaFileDo01)
 #CREATE(%RaWorkList)
