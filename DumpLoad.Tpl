@@ -2848,6 +2848,7 @@ raCountImport          (),LONG
   #SET (%RaClipName, FORMAT(%PassCount,@N05))               #! RAS.2001.09.07
   #SET(%RaFileName, %RaClipName & '.clw')                   #! RAS.2001.01.18
   MODULE('EI_%RaFileName')
+#! RA.2021.01.17: Change how this is done.
 #!#INDENT(-5)
 #!raDump%[16]File PROCEDURE(),LONG
 #!raLoad%[16]File PROCEDURE(),LONG
