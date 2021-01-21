@@ -15,6 +15,8 @@
 #!      NOTE: Need to think about better handling of GLO:FileName.
 #!---------------------------------------------------------------------
 #! Changes:
+#! 2021.01.21 - Roberto Artigas y Soler
+#!  *   DL-BEG/DL-END comments added to the template generation.
 #! 2021.01.17 - Roberto Artigas y Soler
 #!  *   Getting template webinar ready for distribution.
 #! 2020.08.08 - Roberto Artigas y Soler
@@ -92,6 +94,7 @@
   #PROMPT('Locate Begin: ',@N3),%LocB
   #PROMPT('Locate End: ',@N3),%LocE
   #PROMPT('Last Field Id: ',@S60),%lowerFieldId
+  #PROMPT('Return In:',@S60),%ReturnIn,DEFAULT('RC#')
 #ENDBOXED
 #!---------------------------------------------------------------------
 #INSERT(%PreambleDUMPLOAD)
@@ -3697,9 +3700,13 @@ END
   %#ENDTAB
 %#ENDSHEET
   #IF(%ProcedureType = 'FUNCTION')
+! DL-BEG: RC# = %Procedure(%AllProto)
 %%ReturnIn = %Procedure(%AllProto) %#<! %CodeCmnt
+! DL-END: RC# = %Procedure(%AllProto)
   #ELSE
+! DL-BEG: %Procedure(%AllProto)
 %Procedure(%AllProto) %#<! %CodeCmnt
+! DL-END: %Procedure(%AllProto)
   #ENDIF
   #SET(%GroupVar,'%DLC' & %Procedure & 'End')
 %#GROUP(%GroupVar)
@@ -3782,9 +3789,13 @@ END
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btn%Procedure,'Accepted'),PRIORITY(100)
   #IF(%ProcedureType = 'FUNCTION')
+! DL-BEG: RC# = %Procedure(%AllProto)
 %%ReturnIn = %Procedure(%AllProto) %#<! %CodeCmnt
+! DL-END: RC# = %Procedure(%AllProto)
   #ELSE
+! DL-BEG: %Procedure(%AllProto)
 %Procedure(%AllProto) %#<! %CodeCmnt
+! DL-END: %Procedure(%AllProto)
   #ENDIF
 %#ENDAT
 %#!--------------------------------------------------------------------
@@ -3882,7 +3893,9 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raDumpAll()
 %%ReturnIn = raDumpAll() %#<! Dump All Files
+! DL-END: RC# = raDumpAll()
 %#GROUP(%%DL0AllFilesDumpEnd)
 %#!--------------------------------------------------------------------
 %#!--------------------------------------------------------------------
@@ -3903,7 +3916,9 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raLoadAll()
 %%ReturnIn = raLoadAll() %#<! Load All Files
+! DL-END: RC# = raLoadAll()
 %#GROUP(%%DL0AllFilesLoadEnd)
 %#!--------------------------------------------------------------------
 %#!--------------------------------------------------------------------
@@ -3947,7 +3962,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDumpAll,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raDumpAll()
 %%ReturnIn = raDumpAll() %#<! Dump All Files
+! DL-END: RC# = raDumpAll()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDumpAll,'Selected'),PRIORITY(100)
@@ -3991,7 +4008,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoadAll,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raLoadAll()
 %%ReturnIn = raLoadAll() %#<! Load All Files
+! DL-END: RC# = raLoadAll()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoadAll,'Selected'),PRIORITY(100)
@@ -4019,6 +4038,7 @@ END
     %#PROMPT('Return Variable',@s100),%%ReturnIn,REQ,DEFAULT('RC#')
   %#ENDTAB
   %#TAB('Documentation')
+#!    %#DISPLAY('DESCRIPTION: ''%DoThisDesc''')
     %#DISPLAY('Purpose is: Dump ''%DoThisFile''')
     %#DISPLAY('Routine is: raDOne%DoThisFile')
     %#DISPLAY('Located in: %ProjectName')
@@ -4031,7 +4051,9 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raDOne%DoThisFile()
 %%ReturnIn = raDOne%DoThisFile() %#<! %DoThisDesc
+! DL-END: RC# = raDOne%DoThisFile()
   #SET(%GroupVar,'%DL2' & %DoThisFile & 'DumpEnd')
 %#GROUP(%GroupVar)
 %#!--------------------------------------------------------------------
@@ -4056,7 +4078,9 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raLOne%DoThisFile()
 %%ReturnIn = raLOne%DoThisFile() %#<! %DoThisDesc
+! DL-END: RC# = raLOne%DoThisFile()
   #SET(%GroupVar,'%DL2' & %DoThisFile & 'LoadEnd')
 %#GROUP(%GroupVar)
 %#!--------------------------------------------------------------------
@@ -4111,7 +4135,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDump%DoThisFile,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raDOne%DoThisFile()
 %%ReturnIn = raDOne%DoThisFile() %#<! %DoThisDesc
+! DL-END: RC# = raDOne%DoThisFile()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDump%DoThisFile,'Selected'),PRIORITY(100)
@@ -4159,7 +4185,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoad%DoThisFile,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raLOne%DoThisFile()
 %%ReturnIn = raLOne%DoThisFile() %#<! %DoThisDesc
+! DL-END: RC# = raLOne%DoThisFile()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoad%DoThisFile,'Selected'),PRIORITY(100)
@@ -4412,7 +4440,9 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raDumpGroup_%GItem()
 %%ReturnIn = raDumpGroup_%GItem() %#<! Dump Group %GItem
+! DL-END: RC# = raDumpGroup_%GItem()
   #SET(%GroupVar,'%DL1Group' & %GItem & 'DumpEnd')
 %#GROUP(%GroupVar)
 %#!--------------------------------------------------------------------
@@ -4437,8 +4467,10 @@ END
     #INSERT(%CodeLDescr)
   %#ENDTAB
 %#ENDSHEET
+! DL-BEG: RC# = raLoadGroup_%GItem()
 %%ReturnIn = raLoadGroup_%GItem() %#<! Load Group %GItem
   #SET(%GroupVar,'%DL1Group' & %GItem & 'LoadEnd')
+! DL-END: RC# = raLoadGroup_%GItem()
 %#GROUP(%GroupVar)
 %#!--------------------------------------------------------------------
 %#!--------------------------------------------------------------------
@@ -4493,7 +4525,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDumpGroup%GItem,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raDumpGroup_%GItem()
 %%ReturnIn = raDumpGroup_%GItem() %#<! Dump Group %GItem
+! DL-END: RC# = raDumpGroup_%GItem()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnDumpGroup%GItem,'Selected'),PRIORITY(100)
@@ -4541,7 +4575,9 @@ END
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoadGroup%GItem,'Accepted'),PRIORITY(100)
+! DL-BEG: RC# = raLoadGroup_%GItem()
 %%ReturnIn = raLoadGroup_%GItem() %#<! Load Group %GItem
+! DL-END: #RC = raLoadGroup_%GItem()
 %#ENDAT
 %#!--------------------------------------------------------------------
 %#AT(%%ControlEventHandling,%%btnLoadGroup%GItem,'Selected'),PRIORITY(100)
