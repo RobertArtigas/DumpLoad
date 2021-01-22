@@ -43,9 +43,9 @@ IF you have one hundred tables, THEN you will generate four hundred and four tem
 
 Please be kind to your Template Registry and think about the size of it.
 
-# Webinars explaining how to use the DCT2SQL templates
+# Webinars explaining how to use the DumpLoad templates
 
-ClarionLive: 595 : Jan 22, 2021 : https://www.youtube.com/watch?v=ZK4p6CGoOBo&feature=youtu.be
+ClarionLive: 595 : Jan 22, 2021 : https://www.youtube.com/watch?v=fAH3LsPadyg&feature=youtu.be
 
 
 
