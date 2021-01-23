@@ -47,6 +47,8 @@ Please be kind to your Template Registry and think about the size of it.
 
 ClarionLive: 595 : Jan 22, 2021 : https://www.youtube.com/watch?v=fAH3LsPadyg&feature=youtu.be
 
+Clarioneros: 178 : 2021-01-23 : https://clarionlive.com/clarioneros.htm (**OneDrive** link)
+
 
 
 
