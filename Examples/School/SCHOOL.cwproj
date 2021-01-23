@@ -147,6 +147,9 @@
     <Compile Include="SCHOO_EI.clw">
       <Generated>true</Generated>
     </Compile>
+    <Compile Include="SCHOO_gl.clw">
+      <Generated>true</Generated>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Closed.ico" />
