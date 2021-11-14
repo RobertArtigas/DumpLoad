@@ -3,11 +3,11 @@ IF you want me to continue improving this code generator, THEN e-mail me that yo
  It might be useful to include your use case scenario and a description of why you want this 
  improvement and how it helps the business you are involved in working.
 
-SI desea que continúe mejorando este generador de código, ENTONCES envíeme un correo electrónico que lo está utilizando. 
- Puede ser útil incluir el escenario de su caso de uso y una descripción de por qué desea esta mejora
- y cómo ayuda a la empresa en la que está involucrado.
+SI desea que continÃºe mejorando este generador de cÃ³digo, ENTONCES envÃ­eme un correo electrÃ³nico que lo estÃ¡ utilizando. 
+ Puede ser Ãºtil incluir el escenario de su caso de uso y una descripciÃ³n de por quÃ© desea esta mejora
+ y cÃ³mo ayuda a la empresa en la que estÃ¡ involucrado.
  
-# DumpLoad: Backup Code Generator (Generador código de reserva)
+# DumpLoad: Backup Code Generator (Generador cÃ³digo de reserva)
 
 The **DUMPLOAD** template will take all your ISAM tables and EXPORT them as CSV comma delimited files.
  This template will also IMPORT them and restore your table with previous data. This will give you
@@ -49,7 +49,14 @@ ClarionLive: 595 : Jan 22, 2021 : https://www.youtube.com/watch?v=fAH3LsPadyg&fe
 
 Clarioneros: 178 : 2021-01-23 : https://clarionlive.com/clarioneros.htm (**OneDrive** link)
 
+##
+###
 
+I am opposed to all attempts to license or restrict the arming of individuals... I consider such laws a violation of civil liberty, subversive of democratic political institutions, and self-defeating in their purpose.<BR/>
+_Robert A. Heinlein_
+
+
+##
 
 
 [Code](https://github.com/RobertArtigas/DumpLoad) 
