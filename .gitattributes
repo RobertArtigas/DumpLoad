@@ -23,6 +23,7 @@
 *.bmp binary
 *.bpp binary
 *.chm binary
+*.dat binary
 *.dct binary
 *.dll binary
 *.exe binary
@@ -33,7 +34,15 @@
 *.lib binary
 *.png binary
 *.sbp binary
+*.tps binary
 *.zip binary
+
+*.[Tt][Pp][Ss] binary
+*.[Aa][Pp][Pp] binary
+*.[Dd][Cc][Tt] binary 
+
+
+
 
 # Declare help as documentation folder
 help/* linguist-documentation
