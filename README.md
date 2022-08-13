@@ -49,12 +49,6 @@ ClarionLive: 595 : Jan 22, 2021 : https://www.youtube.com/watch?v=fAH3LsPadyg&fe
 
 Clarioneros: 178 : 2021-01-23 : https://clarionlive.com/clarioneros.htm (**OneDrive** link)
 
-##
-###
-
-I am opposed to all attempts to license or restrict the arming of individuals... I consider such laws a violation of civil liberty, subversive of democratic political institutions, and self-defeating in their purpose.<BR/>
-_Robert A. Heinlein_
-
 
 ##
 
@@ -64,4 +58,10 @@ _Robert A. Heinlein_
 [Main](https://github.com/RobertArtigas) 
 [Repositories](https://github.com/RobertArtigas?tab=repositories)
 
- 
+ ##
+Everybody cries, Everybody dies <br/>
+It's the truth that makes us one <br/>
+It's the center of our sun <br/>
+As we take the lonely path <br/>
+On the road to the edge of man <br/>
+_The Outpost - Rita Willson_
