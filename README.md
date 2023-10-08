@@ -61,7 +61,7 @@ Clarioneros: 178 : 2021-01-23 : https://clarionlive.com/clarioneros.htm (**OneDr
  ##
 Merciful Father, <br/>
 I have squandered my days with plans of many things. <br/>
-This was not amonng them. <br/>
+This was not among them.  <br/>
 But at this moment, I beg only... <br/>
 to live the next few moments well. <br/>
 For all we ought to have thought... and have not thought, <br/>
