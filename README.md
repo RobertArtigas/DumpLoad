@@ -64,8 +64,8 @@ I have squandered my days with plans of many things. <br/>
 This was not amonng them. <br/>
 But at this moment, I beg only... <br/>
 to live the next few moments well. <br/>
-For all we ought to have thought... and have not thought,
-all we ought to have said... and have not said,
-all we ought to have done... and have not done,
-I pray thee, god, for forgiveness.
+For all we ought to have thought... and have not thought, <br/>
+all we ought to have said... and have not said, <br/>
+all we ought to have done... and have not done, <br/>
+I pray thee, god, for forgiveness. <br/>
 _The 13th Warrior_
