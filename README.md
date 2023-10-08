@@ -59,9 +59,13 @@ Clarioneros: 178 : 2021-01-23 : https://clarionlive.com/clarioneros.htm (**OneDr
 [Repositories](https://github.com/RobertArtigas?tab=repositories)
 
  ##
-Everybody cries, Everybody dies <br/>
-It's the truth that makes us one <br/>
-It's the center of our sun <br/>
-As we take the lonely path <br/>
-On the road to the edge of man <br/>
-_The Outpost - Rita Willson_
+Merciful Father, <br/>
+I have squandered my days with plans of many things. <br/>
+This was not amonng them. <br/>
+But at this moment, I beg only... <br/>
+to live the next few moments well. <br/>
+For all we ought to have thought... and have not thought,
+all we ought to have said... and have not said,
+all we ought to have done... and have not done,
+I pray thee, god, for forgiveness.
+_The 13th Warrior_
