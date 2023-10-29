@@ -3809,7 +3809,7 @@ END
 #!--------------------------------------------------------------------
 #!--------------------------------------------------------------------
 #! WARNING:     Do NOT allow single quotes in the long description.
-#!              That action will cause generatation of bad templates.
+#!              That action will cause generation of bad templates.
 #GROUP(%CodeLDescr)
 #IF(%PLDesc)
 #!
