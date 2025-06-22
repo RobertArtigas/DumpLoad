@@ -15,6 +15,7 @@
 #!      NOTE: Need to think about better handling of GLO:FileName.
 #!---------------------------------------------------------------------
 #! Changes:
+#! 2025.06.22.SUN   RAYS:   Changed number of years
 #! 2021.01.21 - Roberto Artigas y Soler
 #!  *   DL-BEG/DL-END comments added to the template generation.
 #! 2021.01.17 - Roberto Artigas y Soler
@@ -3130,7 +3131,7 @@ END
   #!DISPLAY('')
   #!DISPLAY('I can be reached at: roberto.artigas.dev@gmail.com')
   #!DISPLAY('')
-  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
+  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 23+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #DISPLAY('This template looks at your dictionary and automagically')
   #DISPLAY('creates all the routines and source to export/import')
@@ -3442,7 +3443,7 @@ END
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
-  #!DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
+  #!DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 23+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #!DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDesc,REQ,DEFAULT(UPPER(%Application) & ': Application Comment')
   #DISPLAY('')
@@ -4258,7 +4259,7 @@ END
   #!DISPLAY('Copyright © 1999-2999 by Roberto Artigas y Soler')
   #!DISPLAY('All Rights Reserved World Wide')
   #!DISPLAY('')
-  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 18+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
+  #DISPLAY('WARNING: THIS HAS NOT BEEN LOOKED AT IN 23+ YEARS (TESTING ON IT)'),PROP(PROP:FontStyle,700)
   #DISPLAY('')
   #PROMPT('Template Description: ',@s60),%TPLDescG,REQ,DEFAULT(UPPER(%Application) & ': Application Group Comment')
   #DISPLAY('')
@@ -4604,11 +4605,11 @@ END
     #DECLARE(%PreambleTextDUMPLOAD)
   #ENDIF
   #SET(%PreambleTextDUMPLOAD,                         'Dump and Load (DUMPLOAD) data in ISAM tables.')
-  #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>Copyright © 1999-2999 by Roberto Artigas y Soler.')
+  #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>Copyright © 1999-' & YEAR(TODAY()) &' by Roberto Artigas y Soler.')
   #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>Collection created by Roberto Artigas y Soler.')
   #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>All rights reserved world wide.')
   #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>E-MAIL: roberto.artigas.dev@gmail.com')
-  #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>SKYPE: Clarion Live | CW-Talk')
+  #SET(%PreambleTextDUMPLOAD, %PreambleTextDUMPLOAD & '<13,10>Discord: CW-Talk | Teams')
 #ENDPREPARE
 #BOXED('Created: 1999.07.27, Released: 2002.06.22'),AT(,,,),PROP(PROP:FontStyle,700)
   #DISPLAY(''),AT(,,,1)
